@@ -1,0 +1,131 @@
+// "static void main" must be defined in a public class.
+class ComplexNumber {
+    int real;
+    int img;
+    ComplexNumber(int real,int img){
+        this.real = real;
+        this.img = img;
+    }
+    
+    public static ComplexNumber sum(ComplexNumber c1,ComplexNumber c2){
+        ComplexNumber temp = new ComplexNumber(c1.real,c1.img);
+        temp.real = temp.real + c2.real;
+        temp.img = temp.img + c2.img;
+        return temp;
+    }
+}
+public class Main {
+    
+    public static void reverseANumber(int n){
+        int rev=0;
+        while(n>0){
+          rev=rev*10+(n%10);
+          n=n/10;    
+        }
+        System.out.println(rev);
+    }
+    
+    public static void checkOddEven(int n){
+       if(n%2 == 0) System.out.println(n + " is Even");
+       else 
+          System.out.println(n + " is Odd");         
+    }
+    
+    public static void chartoString(char ch){
+          System.out.println(Character.toString(ch)); 
+          System.out.println(String.valueOf(ch));
+    }
+    
+    public static void StringtoChar(String s){
+          char ch = s.charAt(0);
+          System.out.println(ch); 
+    }
+    
+    public static void powOfNum(int no,int pow){
+        int product = 1;
+          for (int i=1;i<=pow;i++){
+              product = product*no;
+          }
+        System.out.println(product);
+    }
+    
+    public static void QandR(int n,int divisor){
+          System.out.println((n%divisor) + " = Remainder");
+          System.out.println((n/divisor) + " = Quotient");         
+    }
+    
+     public static void checkLeapYear(int year){
+       if (((year%4==0)&&(year%100!=0)) || (year%400==0))
+           System.out.println(year + " is Leap");
+       else 
+          System.out.println(year + " is not Leap");         
+    }
+    
+    public static void bubbleSort(String[] str){
+        String strTemp = " ";
+       for(int i=0;i<str.length;i++){
+           for (int j=1;j<str.length-i;j++){
+               if ((str[j].compareTo(str[j-1])<0)){
+                   strTemp = str[j];
+                   str[j] = str[j-1];
+                   str[j-1] = strTemp;
+               }
+           }
+       }  
+        for (String s : str){
+            System.out.print(s + " ");
+        }
+    }
+    
+    public static void findVowCon(char ch){
+        boolean vowel = false;
+        switch(ch){
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'A': 
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':vowel = true;    
+        }
+        if (vowel == true){
+            System.out.println(ch +" is a Vowel");
+        }else
+        {
+            if ((ch>='a'&& ch<='z')||(ch>='A'&& ch<='Z')){
+               System.out.println(ch +" is a Consonant"); 
+            }
+        }
+    }
+    
+    public static void main(String[] args) {
+        reverseANumber(12345);
+        checkOddEven(1234);
+        checkLeapYear(2020);
+        QandR(1234,7);
+        chartoString('c');
+        StringtoChar("w");
+        String[] str = {"fathima","ing","dfd","asdf"};
+        bubbleSort(str);
+        
+        ComplexNumber c1 = new ComplexNumber(1,2);
+        ComplexNumber c2 = new ComplexNumber(2,1);
+        ComplexNumber temp = ComplexNumber.sum(c1,c2);
+        System.out.println(temp.real+" "+temp.img);
+        
+        //input taken from console
+        // Scanner s = new Scanner(System.in);
+        // findVC(s.next().charAt(0));
+        // s.close();
+        
+         findVowCon('B');
+         findVowCon('E'); 
+         findVowCon('c');
+         findVowCon('i');
+        
+         powOfNum(5,3);        
+    }
+}
