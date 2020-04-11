@@ -1,5 +1,4 @@
 // "static void main" must be defined in a public class.
-
 // what type of data is present in the Stack / Queue
 
 class StackImple{
@@ -100,20 +99,20 @@ class QueueImple {
 public class Main {
     
     public static void main(String[] args) {
-//         System.out.println("Hello World!");
-//         StackImple s = new StackImple(10);
-//         System.out.println(s.getTop());
-//         s.push(0);
-//         s.push(1);
-//         s.push(2);
-//         s.push(3);
-//         System.out.println(s.getTop());
-//         System.out.println(s.peek());
-//         System.out.println(s.getTop());
-//         System.out.println(s.pop());
-//         System.out.println(s.getTop());
-//         System.out.println(s.pop());
-//         System.out.println(s.getTop());
+         System.out.println("Hello World!");
+         StackImple s = new StackImple(10);
+         System.out.println(s.getTop());
+         s.push(0);
+         s.push(1);
+         s.push(2);
+         s.push(3);
+         System.out.println(s.getTop());
+         System.out.println(s.peek());
+         System.out.println(s.getTop());
+         System.out.println(s.pop());
+         System.out.println(s.getTop());
+         System.out.println(s.pop());
+         System.out.println(s.getTop());
         
         QueueImple q = new QueueImple(10); 
         q.add(11);
