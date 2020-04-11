@@ -1,0 +1,38 @@
+// "static void main" must be defined in a public class.
+public class Main {
+    public static void main(String[] args) {
+        primeNumbers(100);
+    }
+    
+    public static void primeNumbers(int n){
+        List<Integer> notPrimeList = new ArrayList<>();
+        List<Integer> primeList = new ArrayList<>();
+        
+        boolean isPrime;
+        notPrimeList.add(1);
+        primeList.add(2);
+        
+        for (int i=3;i<100;i++){
+            isPrime = true;
+            for (int j=2;j<i;j++){
+                if(i%j == 0){
+                   isPrime = false;
+                   notPrimeList.add(i);
+                   break;
+                }              
+            }
+            if(isPrime) primeList.add(i);
+        }
+        
+        System.out.println("Non Prime Numbers:");
+        for (Integer notPrime : notPrimeList){
+            System.out.print(notPrime +" ");
+        }
+         System.out.println();
+        System.out.println();
+        System.out.println("Prime Numbers:");
+        for (Integer Prime : primeList){
+            System.out.print(Prime +" ");
+        }
+    }
+}
