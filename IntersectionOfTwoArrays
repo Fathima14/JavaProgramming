@@ -1,0 +1,29 @@
+// "static void main" must be defined in a public class.
+// Finding the intersection/common elements between two Arrays
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numArray1 = {1,2,3,0,4,5,6,9};
+        int[] numArray2 = {1,2,10,0,4,11,12,13};
+        Map<Integer,Integer> map = new HashMap<>();
+        int count=1;
+        
+        for (int i=0;i<numArray1.length;i++){
+            if(!map.containsKey(numArray1[i]))
+                map.put(numArray1[i],count);
+            else
+                map.put(numArray1[i],map.get(numArray1[i])+1);
+        }
+        
+        for (int i=0;i<numArray2.length;i++){
+            if(!map.containsKey(numArray2[i]))
+                map.put(numArray2[i],count);
+            else
+                map.put(numArray2[i],map.get(numArray2[i])+1);
+        }
+        for(Map.Entry<Integer,Integer> resultSet : map.entrySet()){
+           if(resultSet.getValue()==2)
+               System.out.print(resultSet.getKey()+" ");
+        }
+    }
+}
