@@ -1,11 +1,17 @@
 // "static void main" must be defined in a public class.
 public class Main {
     public static void main(String[] args) {
+    
        String str = "Hello World";
        System.out.println(new StringBuilder(str).reverse().toString());
        reverseManually(str);
        char[] revString = str.toCharArray();
        iterateManually(revString);
+       String str = "reverse";
+       System.out.println(reverseStringRecursive(str)); 
+       System.out.println(reverseStringIterative(str)); 
+       System.out.println(oneLineReverse(str));
+       System.out.println(reverseBisecting(str));
     }
 
     public static void iterateManually(char[] revString){
@@ -28,4 +34,38 @@ public class Main {
         }
         System.out.println(sb.toString());
     }
+    public static String reverseStringRecursive(String str){
+       if (str == null ) return null;
+       if (str.length() < 2) return str;
+       else
+           return (reverseStringRecursive(str.substring(1)))+str.charAt(0);
+   }
+    
+    public static String reverseStringIterative(String str){
+        int n = str.length()-1;
+        StringBuffer sb = new StringBuffer();
+        for (int i=n;i>=0;i--){
+           sb.append(str.charAt(i)); 
+        }
+        return (sb.toString());
+    }
+
+    public static String oneLineReverse(String str){
+        return (new StringBuffer(str).reverse().toString());
+    }
+    
+    public static String reverseBisecting(String str){
+        char chArray[] = str.toCharArray();
+        char temp;
+        int n = str.length();
+        int j=n-1;
+        for (int i=0;i<=n/2;i++,j--){
+            temp=chArray[i];
+            chArray[i]=chArray[j];
+            chArray[j] = temp; 
+        }
+        String str1 = String.valueOf(chArray);
+        return str1;
+    }
+
 }   
