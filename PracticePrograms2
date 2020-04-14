@@ -1,0 +1,70 @@
+public class Main {
+    public static void main(String[] args) {
+        // Java Octal to Decimal conversion
+        String str = "126";
+        int n = Integer.parseInt(octString,8);
+        
+       // Java Program to Convert Decimal to Octal
+        sop(Integer.toOctalString(num));
+               
+       //Java hexadecimal to decimal conversion
+        int n1 = Integer.parseInt(hexString,16);
+        
+        // Java Program to convert decimal to hexadecimal
+        sop(Integer.toHexString(num));
+        
+        // Java binary to octal conversion
+        String binar = "10101";
+        Int num  = Integer.parseInt(binaryString,2);
+        sop(Integer.toOctalString(num));
+        
+        // Java String to boolean
+       boolean bool = Boolean.parseBoolean(str);
+        
+        // Java program to convert boolean to String
+        String str = String.valueOf(bool);
+        
+        // Java int to char conversion
+       char ch = (char) num;
+        
+        // Java char to int conversion
+       int n = ch; 
+        
+        // Java char to string conversion
+        String str = String.valueOf(ch);
+        
+        // Java long to int conversion
+        int n = (int) l;
+        
+        // Java int to long conversion
+        long l = n;
+        
+        // Java Program to Convert Decimal to Binary
+         Integer.toBinaryString(num);
+        
+        // Java Program to convert binary to Decimal
+        int n = Integer.parseInt(binaryString,2);
+        
+        // Java Program to find ASCII value of a character
+        int asciiValue = (int)ch;
+        
+        // Java program for String to int conversion
+        int n = Integer.parseInt(str);
+        
+        // Java program to convert int to String
+        String s = String.valueOf(num);
+        
+        // Java program for string to double conversion
+        double s = Double.valueOf(str);
+        
+        // Java program to convert double to String
+        String s = String.valueOf(d);
+        
+        // Java program to convert String to long
+        long l = Long.valueOf(str);
+        
+        // Java program to convert long to String
+        String s = String.valueOf(l);       
+        
+    }
+}
