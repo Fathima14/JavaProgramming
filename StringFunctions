@@ -1,0 +1,87 @@
+// "static void main" must be defined in a public class.
+//Conversion From One Type to Another Type
+
+
+public class Main {
+    public static void main(String[] args) {
+        //indexOf,lastIndexOf,charAt,trim,replaceAll,replace,replaceFirst 
+        //toCharArray,contentEquals,contains,startsWith,endsWith
+        //isEmpty,equals,==,compareTo,split,substring,valueOf,toString
+        
+         String str = "   The rains are beautiful to be seen.Its so nice  ";
+        
+    //First , Second & Third Index
+       int index = str.indexOf('s');
+       System.out.println(index);
+       System.out.println(str.charAt(index)); 
+       
+       int n1 = str.indexOf('s',index+1);
+       System.out.println(n1);
+       System.out.println(str.charAt(n1));
+       int n3 = str.indexOf('s',n1+1);
+       System.out.println(n3);
+       System.out.println(str.charAt(n3));
+        
+       int n4 = str.indexOf('s',n1+1);
+       System.out.println(n3);
+       System.out.println(str.charAt(n3));
+        
+        //To CharArray
+        char[] charArray = str.toCharArray();
+        for (char ch : charArray){
+            System.out.print(ch+" ");
+        }
+        System.out.println();
+        
+       // Trim white Spaces 
+        System.out.println(str.trim());
+        
+        //Replace space *
+        System.out.println(str.replace(" ","*"));
+        
+        //equals - compare 
+        //They both are true because we are using string literals
+        String str1 = "super";
+        String str2 = "super";
+        System.out.println(" "+str1.equals(str2)); 
+        System.out.println(" "+(str1 == str2));
+         
+        //They both are not true because we are using string objects 
+         String str3 = new String("super");
+         String str4 = new String("super");
+         String str5 = new String("SUPER");
+        String str6 = new String("SUPER HOUSE");
+        String str7 = new String("super house");
+        String str8 = new String("super house");
+        
+        System.out.println(" "+str3.equals(str4));
+        System.out.println(" "+(str3 == str4));
+        System.out.println(" "+str3.equalsIgnoreCase(str6));
+        System.out.println(str6.contentEquals(str7)); //false - caseSensitive
+        System.out.println(str7.contentEquals(str8)); //true
+        
+        System.out.println(str7.compareTo(str8));
+        //( same means 0, greater means 1, lesser means -1)
+        System.out.println(str6.compareTo(str7));
+        System.out.println(str7.compareTo(str6));
+        
+        System.out.println(str7.charAt(4));
+        System.out.println(str7.contains("super"));
+        
+        System.out.println(str7.toUpperCase());
+        System.out.println(str6.toLowerCase());
+        
+        System.out.println(str7.startsWith("super"));
+        System.out.println(str7.endsWith("e"));
+        
+       // Intern : https://www.geeksforgeeks.org/interning-of-string/
+        
+        System.out.println(str7.isEmpty());
+        System.out.println(str7.replaceFirst("s","h"));
+        
+        String[] s1=str.split(" ");
+        for (String s : s1) System.out.println(s + " ");
+        
+        System.out.println(str.substring(5,15));        
+    }
+}
