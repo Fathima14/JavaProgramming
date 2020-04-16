@@ -1,0 +1,61 @@
+// "static void main" must be defined in a public class.
+ // Various Ways to Iterate the List
+public class Main {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("Syed");
+        list.add("Sifa"); 
+        list.add("Vijji"); 
+        list.add("Vyshu"); 
+        list.add("Salih"); 
+        list.add("Shakil"); 
+        list.add("Chinthu"); 
+        list.add("Desi"); 
+        
+        //Method 1
+        for(int i =0;i<list.size();i++){
+            System.out.print(list.get(i)+ " ");
+        }        
+        System.out.println();
+        System.out.println("----------------");
+        
+        //Method 2
+        for(String s : list){
+            System.out.print(s + " ");
+        }
+        System.out.println();
+        System.out.println("----------------");
+        
+        //Method 3
+        list.forEach(names -> {
+           System.out.print(names + " "); 
+        });
+        System.out.println();
+        System.out.println("----------------");
+        
+        //Method 4
+        Iterator itr = list.iterator();
+        while(itr.hasNext()){
+           System.out.print(itr.next() + " ");  
+        }        
+        System.out.println();
+        System.out.println("----------------");
+        
+       //Method 5
+        itr = list.iterator();
+        itr.forEachRemaining(names -> {
+          System.out.print(names + " ");   
+        });
+        System.out.println();
+        System.out.println("----------------");
+        
+        //Method 6
+        ListIterator<String> litr = list.listIterator(list.size());
+        while (litr.hasPrevious()){
+           System.out.print(litr.previous() + " ");  
+        }
+        System.out.println();
+        System.out.println("----------------");        
+               
+    }
+}
