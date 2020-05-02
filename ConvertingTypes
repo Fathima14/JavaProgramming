@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+       convertingTypes(); 
+       }
+
+public static void convertingTypes(){
+        String s = "12345";
+        // Converting to int from String
+        int i = Integer.parseInt(s);
+        int j = Integer.valueOf(s);
+        j = j +2;
+        System.out.println(j);
+        
+        // Converting to double/long/boolean/float from String
+        double d = Double.parseDouble("123.34");
+        d= d+10.05;
+        System.out.println(d);
+        
+        // true - will give true , false will false (caps / small)
+        // anything else will give false
+        boolean b = Boolean.valueOf("something");
+        System.out.println(b); // false
+        b = Boolean.valueOf("True");
+        System.out.println(b); //true
+        b = Boolean.valueOf("false");
+        System.out.println(b); // false
+    }
+    
+  }  
+    
