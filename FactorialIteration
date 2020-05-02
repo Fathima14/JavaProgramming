@@ -1,0 +1,19 @@
+public class Main {
+  public static void main(String[] args) {
+        int n = 5;
+        fact = factorialIterativeMethod(n);
+        System.out.println(fact);
+    }
+    
+    public static int factorialIterativeMethod(int n){
+        int fact = 1;
+        if(n==1 || n==0)
+           return fact;
+        else{
+            for(int i=2;i<=n;i++){
+                fact= fact*i;
+            }
+           return fact;
+        }
+    }
+  }
