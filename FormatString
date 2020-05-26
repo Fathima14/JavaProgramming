@@ -4,8 +4,7 @@
 public class Main {
     public static void main(String[] args) {
        String s = "JOHN:1234567890";
-       //formatString1(s); 
-       convertingTypes(); 
+       formatString1(s); 
        }
     public static void formatString1(String s){
      StringBuffer sb = new StringBuffer(s.substring(5));
