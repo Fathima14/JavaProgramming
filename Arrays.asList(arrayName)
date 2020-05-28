@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        //How to convert an array into a collection?
+        Integer[] numArray = {1,2,3,4,5};
+        List<Integer> list = Arrays.asList(numArray);
+        System.out.println(list);
+        
+        String[] name = {"Fat","Vai","Syed"};
+        List<String> names = Arrays.asList(name);
+        System.out.println(names);
+        
+    }
+}
