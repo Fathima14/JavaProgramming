@@ -1,0 +1,9 @@
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(1);
+        List l1 = Collections.unmodifiableList(list);
+        System.out.println(l1);
+        //l1.add(2);       
+    }
+}
