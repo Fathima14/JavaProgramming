@@ -1,0 +1,41 @@
+1234567
+  234567
+   34567
+    4567
+     567
+      67
+       7
+      67
+     567
+    4567
+   34567
+  234567
+ 1234567
+public class Main {
+    public static void main(String[] args) {
+        int n = 7;
+        int k = 1; 
+        for (int i=1;i<=n;i++){
+            for (int z=1;z<=k;z++){
+                System.out.print(" ");
+            }
+            for (int j=k;j<=n;j++){ 
+                   System.out.print(j); 
+            }
+            System.out.println();
+            k=k+1;
+        }
+        k=k-2;
+        for (int i=(n-1);i>=1;i--){
+            for (int z=1;z<=k;z++){
+                System.out.print(" ");
+            }
+            for (int j=k;j<=n;j++){ 
+                   System.out.print(j); 
+            }
+            System.out.println();
+            k=k-1;
+        }
+        
+    }
+}
