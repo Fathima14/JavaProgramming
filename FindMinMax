@@ -1,0 +1,15 @@
+public class Main {
+    public static void main(String[] args) {
+        int numArray[] ={1,7,91,12,57};
+        int len = numArray.length;
+        int min=numArray[0];
+        int max=numArray[0];
+        for (int i=1;i<len;i++){
+            if (numArray[i]<min)
+                min = numArray[i];
+            if (numArray[i]>max)
+                max = numArray[i];
+        }
+        System.out.println(min + " " + max);
+    }
+}
