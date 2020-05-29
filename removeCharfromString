@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+        String s = "Alive is awesome";
+        String s1 = "alwsr";
+        s=s.toLowerCase();
+        s1=s1.toLowerCase();
+        char[] ch = s.toCharArray();
+        char[] ch1= s1.toCharArray();
+        List<Character> list = new LinkedList<>();
+        for(int i=0;i<ch.length;i++){
+            list.add(ch[i]);
+        }
+        System.out.println(s);
+        for(int j=0;j<ch1.length;j++){
+            Character ch2 = ch1[j];
+            while(list.contains(ch2)){
+               list.remove(ch2); 
+            }
+              
+        }
+        Iterator itr = list.iterator();
+        while(itr.hasNext()){
+            System.out.print(itr.next());
+        }
+        
+    }
+}
