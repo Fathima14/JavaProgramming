@@ -1,4 +1,3 @@
-package com.selenium;
 //3
 //6
 //8 2 3 11 11 10
@@ -24,25 +23,24 @@ public class FindingAntennas {
 	List<Integer> noofBuildings = new ArrayList<>();
 	
 	
-	// Input Getting
+	// Reading Input
 	for(int i=0;i<noOfStreets;i++) {
 		System.out.println("Enter the No Of Buildings in "+ (i+1) + "th Street : " );
 		noofBuildings.add(s.nextInt());	
 		System.out.println("Enter the Heights Of Each Building in "+ (i+1) + "th Street " );
 		for (int j=0;j<noofBuildings.get(i);j++) {
 			buildingHeights.add(s.nextInt());
-		}
-				
+		}				
 	}
 	
-    
-    int noOfAttennas = noOfStreets * 3;
-    int heightOfBuilding = buildingHeights.get(1);
-    int j =0;
+    s.close();
+
+    int noOfAttennas = 0;
+    int heightOfBuilding=0;
+    int j=0;
+    int k=0;
     for (int i=0;i<noOfStreets;i++) {
-    	if (i==0 ) j=0;
-    	else j=noofBuildings.get(i-1);
-    	int k=j+noofBuildings.get(i);
+    	k=j+noofBuildings.get(i);
     	
     	while(j<k) {
     		if(heightOfBuilding<buildingHeights.get(j)) {
@@ -51,8 +49,9 @@ public class FindingAntennas {
     		}
     		j++;
     	}
-    		heightOfBuilding=buildingHeights.get((noofBuildings.get(i)+1));
-    	}
+    	heightOfBuilding=0;
+ 
+    }
     
     System.out.println("No Of Streets : "+ noOfStreets);    
     System.out.println("No Of Buildings : "+ noofBuildings);
