@@ -1,0 +1,64 @@
+package com.selenium;
+//3
+//6
+//8 2 3 11 11 10
+//5
+//12 20 39 45 89
+//3
+//9 2 10
+//finding no of anttenas  
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class FindingAntennas {
+	
+	public static void main(String[] args) {
+	
+	Scanner s = new Scanner(System.in);
+	System.out.println("Enter the No Of Streets");
+	int noOfStreets = s.nextInt();
+	
+	List<Integer> buildingHeights = new ArrayList<>();
+	List<Integer> noofBuildings = new ArrayList<>();
+	
+	
+	// Input Getting
+	for(int i=0;i<noOfStreets;i++) {
+		System.out.println("Enter the No Of Buildings in "+ (i+1) + "th Street : " );
+		noofBuildings.add(s.nextInt());	
+		System.out.println("Enter the Heights Of Each Building in "+ (i+1) + "th Street " );
+		for (int j=0;j<noofBuildings.get(i);j++) {
+			buildingHeights.add(s.nextInt());
+		}
+				
+	}
+	
+    
+    int noOfAttennas = noOfStreets * 3;
+    int heightOfBuilding = buildingHeights.get(1);
+    int j =0;
+    for (int i=0;i<noOfStreets;i++) {
+    	if (i==0 ) j=0;
+    	else j=noofBuildings.get(i-1);
+    	int k=j+noofBuildings.get(i);
+    	
+    	while(j<k) {
+    		if(heightOfBuilding<buildingHeights.get(j)) {
+    			heightOfBuilding=buildingHeights.get(j);
+    			noOfAttennas=noOfAttennas+3;
+    		}
+    		j++;
+    	}
+    		heightOfBuilding=buildingHeights.get((noofBuildings.get(i)+1));
+    	}
+    
+    System.out.println("No Of Streets : "+ noOfStreets);    
+    System.out.println("No Of Buildings : "+ noofBuildings);
+    System.out.println("BuildingHeights : "+buildingHeights);
+    System.out.println("No Of Attennas : " + noOfAttennas);
+
+	}
+    	
+ } 
