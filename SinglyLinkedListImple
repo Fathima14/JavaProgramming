@@ -1,0 +1,207 @@
+class Node{
+	
+	int data;
+	Node link;
+	
+	Node(int data ){
+		this.data = data;
+		this.link = null;
+	}
+	
+}
+
+public class LinkedList {
+	
+	Node head;
+	
+	public void removeKey(int key) {
+		Node current = head;
+		Node prev=null;
+		if(head!=null) {
+			while (current.link != null && current.data != key ) {
+				prev = current;
+				current=current.link;
+			}
+			prev.link=current.link;
+			current.link=null;
+		}else {
+			System.out.println("Empty Linked list");
+		}
+		
+	}
+	
+	public void removelast(){
+		Node current = head;
+		Node prev=null;
+		if(head!=null) {
+			while(current.link!=null) {
+				prev=current;
+				current= current.link;
+			}
+			prev.link=null;
+		}else {
+			System.out.println("Empty Linked list");
+		}
+	}
+	
+	public void removeFirst(){
+		Node current = head;
+		if (head!=null)
+			head=current.link;
+		else
+			System.out.println("Empty Linked list");
+		
+	}
+	
+	public void addAfter(int key,int data) {
+		
+		Node node = new Node(data);
+		Node current = head;
+		while(current.data != key && current.link !=null) {
+			current = current.link;
+		}
+		node.link = current.link;
+		current.link=node;
+		
+	}
+	
+	public void addBefore(int key,int data) {
+		
+		Node node = new Node(data);
+		Node current = head;
+		Node prev=null;
+		
+		while(current.data != key && current.link !=null) {
+			prev=current;
+			current = current.link;
+		}
+		node.link=current;
+		// This condition is used when you try to add it before first node	
+		if(prev !=null)
+			prev.link=node;
+		else 
+			head = node;
+		
+	}
+	
+	public void addLast(int data) {
+		Node node = new Node(data);
+		Node current = head;
+		while(current.link != null) {
+			current = current.link;
+		}
+		current.link = node;
+	}
+	
+	public void add(int data) {
+		
+		Node node = new Node(data);
+		
+		if(this.head == null) {	
+			this.head = node;
+		}
+		else {
+			Node current = head;
+			while (current.link!=null) {
+				current = current.link;
+			}	
+			current.link=node;
+		}
+		
+	}
+	
+	public void reverseNodes() {
+		Node current = head;
+		Node prev = null;
+		Node next = null;
+		while(current.link!=null) {
+			next = current.link;
+			current.link = prev;
+			prev=current;
+			current= next;		
+		}
+		current.link=prev;
+		head=current;
+		
+	}
+	
+	public void addAtMiddle(int data){
+		
+		Node node = new Node(data);
+		Node pointer1 = head;
+		Node pointer2 = pointer1.link;
+		
+		while(pointer2.link!=null && pointer2.link.link!=null) {
+			pointer1 = pointer1.link;
+			pointer2=pointer2.link.link;
+		}
+		if(pointer2.link==null){
+			node.link=pointer1.link;
+			pointer1.link=node;	
+		}else if(pointer2.link.link==null) {
+			node.link=pointer1.link.link;
+			pointer1.link.link=node;
+		}else {
+			System.out.println("Something Wrong");
+		}
+		
+		
+	}
+	
+	public void printNodes(){
+		
+		Node current = head;
+		if(head!=null) {
+		while(current.link !=null) {
+			System.out.println(current.data);
+			current=current.link;
+		}
+		System.out.println(current.data);
+		}else {
+			System.out.println("Empty Linked list");
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		
+		LinkedList list = new LinkedList();
+		list.removeKey(1000);
+		list.removelast();
+		list.removeFirst();
+		list.printNodes();
+		System.out.println("--------");
+		list.add(1);
+		list.add(2);
+		list.add(4);
+		list.addAfter(2,3);
+		list.printNodes();
+		System.out.println("--------");
+		list.addBefore(4,33);
+		list.addBefore(1,0);
+		list.printNodes();
+		System.out.println("--------");
+		list.addLast(100);
+		list.printNodes();
+		System.out.println("--------");
+		list.reverseNodes();
+		list.printNodes();
+		System.out.println("--------");
+		list.addAtMiddle(8);
+		list.printNodes();
+		System.out.println("--------");
+		list.addAtMiddle(1000);
+		list.printNodes();
+		System.out.println("--------");
+		list.removeKey(1000);
+		list.printNodes();
+		System.out.println("--------");
+		list.removelast();
+		list.printNodes();
+		System.out.println("--------");
+		list.removeFirst();
+		list.printNodes();
+
+	}
+
+}
