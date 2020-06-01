@@ -14,6 +14,24 @@ public class LinkedList {
 	
 	Node head;
 	
+	public void nthNodeFromLast(int n) {
+		Node fast = head;
+		Node slow = head;
+		int start = 1;
+		
+		while (fast.link!=null) {
+			fast = fast.link;
+			start++;		
+		
+			 if (start > n) {
+				 slow = slow.link;
+			 }
+		}
+		
+		System.out.println(slow.data);
+				
+	}
+	
 	public void removeKey(int key) {
 		Node current = head;
 		Node prev=null;
@@ -201,6 +219,8 @@ public class LinkedList {
 		System.out.println("--------");
 		list.removeFirst();
 		list.printNodes();
+		System.out.println("--------");
+		list.nthNodeFromLast(5);
 
 	}
 
