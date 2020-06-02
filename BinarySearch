@@ -1,0 +1,43 @@
+import java.util.Arrays;
+
+public class BinarySearch {
+	
+	public static int binarySearch(int[] numArray,int key) {
+		
+		Arrays.sort(numArray);
+		for (int i : numArray) {
+			System.out.print(i+" ");
+		}
+		
+		System.out.println();
+		int left = 0;
+		int right = numArray.length;
+		int mid = 0;
+		int index = -1;
+		
+		while(left<right) {
+			mid = (left + right)/2;
+			if (numArray[mid]==key) {
+				index=mid;
+				break;
+			}else if (numArray[mid]>key) {
+				right = mid-1;
+			}else {
+				left = mid +1;
+			}			
+		}
+		return index;
+	}
+
+	public static void main(String[] args) {
+		int[] numArray = {9,5,3,1,2,6,10,8,4,7};
+		int index = BinarySearch.binarySearch(numArray,10);
+		if (index == -1) {
+			System.out.println("Key Not Found In Array ");
+		}else {
+			System.out.println("Key found in Array at :" + index+ " Key value :"+numArray[index]);
+		}
+		
+	}
+
+}
