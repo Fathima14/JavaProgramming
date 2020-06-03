@@ -1,0 +1,16 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        // A String rotation is found => if u add str 1 two times then str 2 will be inside str1
+        //then str2 is a rotation of str1.
+//         java2blog and blogjava2 are rotation of each other.
+//         java2blog and avablog2j are not rotation of each other.
+        
+        String str2 = "java2blog";
+        String str1 = "blogjava2";
+        
+        str1 = str1+str1;
+        System.out.println("is Str1 and Str2 rotation ? " + str1.contains(str2)); // True
+        
+    }
+}
