@@ -1,0 +1,18 @@
+public class Main {
+    public static void main(String[] args) {
+      
+       //Finding Substrings   
+        
+       String s ="abcd";
+        int len=s.length();
+        
+        //because substring will get i to j-1
+        for (int i=0;i<len;i++){
+            for(int j=i+1;j<=len;j++){
+                System.out.println(s.substring(i,j));
+            }
+        }
+        
+        
+    }
+}
