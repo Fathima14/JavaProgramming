@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+      
+       //Finding length of the string
+        String s = "abbc bcdde";
+        char ch[]=s.toCharArray();
+        int count=0;
+        for(char c : ch){
+            count++;
+        }
+        System.out.println(count);
+        
+        // another method by invoking exception
+        count=0;
+        try{
+            for(int i=0;;i++){
+                s.charAt(i);
+                count++;
+            }            
+        }catch(Exception e){
+            
+        }
+        System.out.println(count);
+    }
+}
