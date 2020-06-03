@@ -6,7 +6,7 @@ public class Main {
        String s ="abcd";
         int len=s.length();
         
-        //because substring will get i to j-1
+        //because substring will always get i to j-1
         for (int i=0;i<len;i++){
             for(int j=i+1;j<=len;j++){
                 System.out.println(s.substring(i,j));
