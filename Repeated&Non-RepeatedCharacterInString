@@ -1,0 +1,42 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        //First Repeated character in a String
+        
+        String str2 = "jav12bljog";
+        Map<Character,Integer> map = new HashMap<>();
+        char ch[] = str2.toCharArray();
+        int len = ch.length;
+        char ch1=' ';
+        
+        for(int i=0;i<len;i++){
+            if(!map.containsKey(ch[i]))
+                map.put(ch[i],1);
+            else {
+              ch1=ch[i];
+              break;  
+            }       
+        }
+        System.out.println(ch1);  
+       
+        //First Non-repeated character 
+        
+        String str1 = "aaaaabaggg";
+        Map<Character,Integer> map1 = new HashMap<>();
+        char ch2[] = str1.toCharArray();
+        int len1 = ch2.length;
+        char ch3=' ';
+        
+        map1.put(ch2[0],1);
+        for(int j=1;j<len1;j++){
+            if(map1.containsKey(ch2[j]))
+                map1.put(ch2[j],map1.get(ch2[j])+1);
+            else {
+              ch3=ch2[j];
+              break;  
+            }       
+        }
+        
+        System.out.println(ch3);        
+    }
+}
