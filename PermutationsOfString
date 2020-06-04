@@ -1,0 +1,24 @@
+public class Main {
+    public static String swap(String str,int i,int j){
+        char ch[] = str.toCharArray();
+        char temp;
+        temp=ch[i];
+        ch[i]=ch[j];
+        ch[j]=temp;
+        return String.valueOf(ch);        
+    }
+    
+    public static void calculate(String str,int left,int right){
+        if (left == right)
+            System.out.println(str);
+        else
+            for(int i=left;i<=right;i++){
+                String swapped = swap(str,left,i);
+                calculate(swapped,left+1,right);
+            }
+    }
+    public static void main(String[] args) {
+      String str = "ABC";
+      calculate(str,0,str.length()-1);      
+    }
+}
