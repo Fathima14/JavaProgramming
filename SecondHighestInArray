@@ -1,0 +1,24 @@
+public class SecondHighest {
+
+	public static void main(String[] args) {
+		int a[] = {9,12,15,17,25,32,3,5,7,28};
+		int high1 =a[0];
+		int high2=a[1];
+					
+		for (int i=2;i<a.length;i++) {
+			
+			if (a[i]>high1) {
+				high2=high1;
+				high1 = a[i];				
+			} else if (a[i]>high2)
+				high2=a[i];
+			else {
+				
+			}
+		}
+
+		System.out.println("Second Highest : "+high2);
+		
+	}
+
+}
