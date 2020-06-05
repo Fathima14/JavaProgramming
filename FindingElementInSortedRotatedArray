@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     
     public static int findingPivot(int[] a,int start,int end){
+        //Time Taken = o(log n)
         int mid = (start+end)/2;
         if (a[mid]>a[mid+1])
             return mid+1;
@@ -15,6 +16,7 @@ public class Main {
     }
     
     public static int binarySearch(int[] a, int key){
+        //Time Taken = o(log n)
         int left = 0;
         int right = a.length-1;
         int index = -1;
@@ -34,6 +36,7 @@ public class Main {
     }
         
     public static void main(String[] args) {
+        //Time Taken = o(log n) + o(log n)
        int n[] = {9,12,15,17,25,28,32,37,3,5,7,8};
        int end = n.length;
        Scanner s = new Scanner(System.in);
