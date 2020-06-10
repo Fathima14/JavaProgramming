@@ -1,0 +1,33 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        int arr[] = {100, 140, 150, 200, 215, 400};
+		int dep[] = {110, 300, 210, 230,315, 600};
+        
+        System.out.println(" Minimum No Of Platforms : " + findingMinNoPlatforms(arr,dep));
+               
+    }
+    
+    public static int findingMinNoPlatforms(int[] arr,int[] dep){
+        
+        Arrays.sort(arr);
+        Arrays.sort(dep);
+        int n = arr.length;
+        int noOfplatforms =0,minmum =0;
+        int i=0,j=0;
+        while (i<n && j<n){
+            if(arr[i]<dep[j]){
+                noOfplatforms++;
+                i++;
+                if(noOfplatforms > minmum)
+                    minmum = noOfplatforms;
+            }else{
+                noOfplatforms--;
+                j++;
+            }
+        }
+        
+        return minmum;
+        
+    }
+}
