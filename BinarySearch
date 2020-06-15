@@ -11,12 +11,15 @@ public class BinarySearch {
 		
 		System.out.println();
 		int left = 0;
-		int right = numArray.length;
+		int n = numArray.length;
+		int right = n
 		int mid = 0;
 		int index = -1;
 		
-		while(left<right) {
+		while(left<=right) {
 			mid = (left + right)/2;
+			if (mid >= n )
+			    break;
 			if (numArray[mid]==key) {
 				index=mid;
 				break;
