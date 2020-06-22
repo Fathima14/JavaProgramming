@@ -1,0 +1,31 @@
+public class Main {
+    public static void main(String[] args) {
+        int array[]={-40,-5,1,3,6,7,8,20};
+		int x = 5;
+		pairToCloseToX(array,x);
+    }
+    
+    public static void pairToCloseToX(int[] a,int x){
+        int r=a.length-1;
+        int l=0;
+        int ml=0;
+        int mr=0;
+        int currMin=0;
+        int min=Integer.MAX_VALUE;
+        while(l<r){
+            currMin=Math.abs(a[l]+a[r]-x);
+            if (currMin<min){
+                min=currMin;
+                ml=l;
+                mr=r;
+            }
+            if (a[l]+a[r] < x)
+                l++;
+            else
+                r--;
+        }
+        System.out.println("Index : " + ml + " : "+ "Values : " + a[ml]);
+        System.out.println("Index : " + mr + ": "+"Values : " + a[mr]);
+        
+    }
+}
