@@ -1,0 +1,24 @@
+import java.util.*;
+public class LongestSubStringwithoutRepeation{
+
+     public static void main(String []args){
+        String str2 = "pickoutthelongestsubstring";
+        LinkedHashMap<Character,Integer> map = new LinkedHashMap();
+        char ch[]=str2.toCharArray();
+        String longStr ="";
+        int strLength=0;
+        
+        for(int i=0;i<ch.length;i++){
+            if (!map.containsKey(ch[i]))
+               map.put(ch[i],i);
+            else{
+                map.clear();
+            }
+            if(map.size()>strLength){
+                strLength=map.size();
+                longStr=map.keySet().toString();
+            }
+        }
+        System.out.println(longStr);
+     }
+}
